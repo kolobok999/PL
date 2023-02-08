@@ -334,7 +334,7 @@ __pycache__/
 # Tabs Studio
 *.tss
 
-# Telerik's JustMock configuration file
+# Telerik's JustMock configuration fileresults
 *.jmconfig
 
 # BizTalk build output
@@ -377,6 +377,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
