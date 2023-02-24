@@ -10,8 +10,25 @@
 // 5 - 2р
 using static Task_8.Library;
 
-int[] array = new int[30];
-int[] counter = new int[100];
+int[] Sort(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        int min = arr[i];
+        for (int j = i; j < arr.Length; j++)
+        {
+            if (arr[j] < min)
+            {
+                min = arr[j];
+                Swap(arr, j, i);
+            }
+        }
+    }
+    return arr;
+}
+
+int[] array = new int[20];
+int[] counter = new int[20];
 
 WriteArray(array, 0, 20);
 PrintArray(array);
@@ -21,8 +38,10 @@ for (int i = 0; i < array.Length; i++)
     counter[array[i]]++;
 }
 System.Console.WriteLine();
-for (int i = 0; i < array.Length; i++)
+Sort(arr: array);
+for (int i = 0; i < counter.Length; i++)
 {
+    if (counter[array[i]] > 0)
     System.Console.WriteLine(array[i] + " -> " + counter[array[i]]);
 }
 
