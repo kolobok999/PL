@@ -103,6 +103,18 @@ public class Library
         return matr;
     }
 
+    public static double[,] FillMatrix(double[,] matr, int minValue, int maxValue)
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                matr[i, j] = minValue + new Random().NextDouble() * (maxValue - minValue);
+            }
+        }
+        return matr;
+    }
+
     public static void PrintMatrix(int[,] matr)
     {
         for (int i = 0; i < matr.GetLength(0); i++)
@@ -110,6 +122,18 @@ public class Library
             for (int j = 0; j < matr.GetLength(1); j++)
             {
                 System.Console.Write($"{matr[i, j]} ");
+            }
+            System.Console.WriteLine();
+        }
+    }
+
+    public static void PrintMatrix(double[,] matr)
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                System.Console.Write($"{Math.Round(matr[i, j], 2)}  ");
             }
             System.Console.WriteLine();
         }
