@@ -1,7 +1,7 @@
 ﻿namespace Library;
 public class Library
 {
-    public static void Swap(int[] arr, int a, int b)  // Меняет местами элеминты массива
+     public static void SwapArray(int[] arr, int a, int b)  // Меняет местами элеминты массива
     {
         int temp;
         temp = arr[a];

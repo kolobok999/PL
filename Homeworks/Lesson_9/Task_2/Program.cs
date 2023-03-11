@@ -5,7 +5,7 @@
 
 using static Library.Library;
 
-int sumOfNumber(int m, int n)
+int sumOfNumberIter(int m, int n)
 {
     int sum = 0;
     for (int i = m; i <= n; i++)
@@ -15,7 +15,18 @@ int sumOfNumber(int m, int n)
     return sum;
 }
 
+int sumOfNumberRec(int a, int b) {
+    int sum = 0;
+    if (a == b) 
+    {
+        return b;
+    }
+    sum += a + sumOfNumberRec(a + 1, b);
+    return sum;
+}
+
 int m = ReadNumber();
 int n = ReadNumber();
 
-System.Console.WriteLine($"M = {m}; N = {n} -> {sumOfNumber(m, n)}");
+System.Console.WriteLine($"M = {m}; N = {n} -> {sumOfNumberIter(m, n)}");
+System.Console.WriteLine($"M = {m}; N = {n} -> {sumOfNumberRec(m, n)}");
